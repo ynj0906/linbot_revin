@@ -1,3 +1,4 @@
+# coding: UTF-8
 import requests, os, re
 from bs4 import BeautifulSoup
 from datetime import date, datetime
@@ -44,6 +45,8 @@ def tweetinfo():
                         ff.write(str(unixtime))
                         print("はじまった")
                         return True
+                else:
+                    print("それ以外")
         else:
             print("該当なし")
             pass
