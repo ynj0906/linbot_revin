@@ -8,6 +8,9 @@ from linebot.models import MessageEvent, TextMessage, FollowEvent, UnfollowEvent
 from linebot import LineBotApi, WebhookHandler
 from linebot.exceptions import LineBotApiError
 
+from dotenv import load_dotenv
+load_dotenv()
+
 
 def tweetinfo():
     url = "https://twitter.com/rev84"
