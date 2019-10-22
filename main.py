@@ -39,10 +39,10 @@ def tweetinfo():
         if today_unixtime == today_tzone and "配信を開始しました" in topicsindex2.text:
             with open("aaa.txt", "r+", encoding="utf-8",newline=None)as f:
                 #対象ツイートのunixtimeを以て、一度実行済みならスルー
-                if str(unixtime) == f.read():
+                if str(unixtime) == f.read().rstrip("\n"):
                     print("一回スクレイピング済み")
                     pass
-                elif str(unixtime) != f.read():
+                elif str(unixtime) != f.read().rstrip("\n"):
                     #ファイルをr+で開いていると追記になるので、w+で開き直して上書きの上、unixtimeを追加
                     with open("aaa.txt", "w+", encoding="utf-8",newline='\n')as ff:
                         ff.write(str(unixtime) + '\n')
