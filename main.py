@@ -37,15 +37,15 @@ def tweetinfo():
 
         # twitterの投稿日が今日 & 対象の言葉が含まれてたら、テキスト本文取得
         if today_unixtime == today_tzone and "配信を開始しました" in topicsindex2.text:
-            with open("aaa.txt", "r+", encoding="utf-8")as f:
+            with open("aaa.txt", "r+", encoding="utf-8",newline=None)as f:
                 #対象ツイートのunixtimeを以て、一度実行済みならスルー
                 if str(unixtime) == f.read():
                     print("一回スクレイピング済み")
                     pass
                 elif str(unixtime) != f.read():
                     #ファイルをr+で開いていると追記になるので、w+で開き直して上書きの上、unixtimeを追加
-                    with open("aaa.txt", "w+", encoding="utf-8")as ff:
-                        ff.write(str(unixtime))
+                    with open("aaa.txt", "w+", encoding="utf-8",newline='\n')as ff:
+                        ff.write(str(unixtime) + '\n')
                         print("はじまった")
                         return True
                 else:
@@ -79,5 +79,12 @@ def handle(*args, **options):
             line_bot_api.push_message("Uc148172028f01d4635bdb232e6b00920", TextSendMessage(text="はじまったで！"))
         except LineBotApiError as e:
             return e
-
 print(handle())
+
+def callback():
+    pass
+
+def follow():
+    pass
+
+
