@@ -40,18 +40,18 @@ def tweetinfo():
             with open("aaa.txt", "r+", encoding="utf-8",newline=None)as f:
                 #対象ツイートのunixtimeを以て、一度実行済みならスルー
                 if str(unixtime) == f.read().rstrip("\n"):
-                    print("一回スクレイピング済み")
-                    pass
+                    # print("一回スクレイピング済み")
+                    break
                 elif str(unixtime) != f.read().rstrip("\n"):
                     #ファイルをr+で開いていると追記になるので、w+で開き直して上書きの上、unixtimeを追加
                     with open("aaa.txt", "w+", encoding="utf-8",newline='\n')as ff:
                         ff.write(str(unixtime) + '\n')
-                        print("はじまった")
+                        # print("はじまった")
                         return True
                 else:
-                    print("それ以外")
+                    # print("それ以外")
         else:
-            print("該当なし")
+            # print("該当なし")
             pass
 
 
