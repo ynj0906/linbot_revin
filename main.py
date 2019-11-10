@@ -1,6 +1,7 @@
 # coding: UTF-8
 import requests, os, re
 from bs4 import BeautifulSoup
+import pathlib
 from datetime import date, datetime
 import pytz
 from linebot.models import MessageEvent, TextMessage, FollowEvent, UnfollowEvent, TextSendMessage, ImageMessage, \
@@ -49,6 +50,7 @@ def tweetinfo():
                         # print("はじまった")
                         return True
                 else:
+                    pass
                     # print("それ以外")
         else:
             # print("該当なし")
